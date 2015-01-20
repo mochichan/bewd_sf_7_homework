@@ -1,0 +1,10 @@
+<h1> <%= @record_label.name %></h1>
+<p> <%= @record_label.description %></p>
+
+<h2>Artists:</h2>
+
+<ul>
+	<% @artists.each do |artist|%>
+	<li><%= link_to artist.name, artist_path(artist.id) %></li>
+	<% end %>
+</ul>

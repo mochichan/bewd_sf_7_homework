@@ -1,0 +1,29 @@
+<% 
+  artist_name = []
+  @artists.each do |x|
+    artist_name.push x.name
+  end
+%>
+
+<p>Add A New Song:</p>
+
+<%= form_for :song, url: song_index_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :year %><br>
+    <%= f.text_area :year %>
+  </p>
+ 
+  <p>
+    <%= f.label :artist_name %><br>
+    <%= f.select :artist_name, artist_name%>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

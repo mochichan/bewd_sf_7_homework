@@ -1,0 +1,12 @@
+<h1>Title: <%= @song.title %></h1>
+<p>Release Year: <%= @song.year %></p>
+
+<%= link_to 'Edit song', edit_song_path %>
+
+<%= link_to 'Destroy', song_path(@song),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+
+<p>
+<%= link_to 'Back', record_label_index_path %>
+</p>

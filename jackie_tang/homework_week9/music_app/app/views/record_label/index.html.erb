@@ -1,0 +1,8 @@
+<h1>Record Label List: </h1>
+
+<ul></ul>
+<% @record_labels.each do |record_label| %>
+	<li><%= link_to record_label.name, record_label_path(record_label.id) %></li>
+<% end %>
+
+<%= link_to "Back", root_path%>

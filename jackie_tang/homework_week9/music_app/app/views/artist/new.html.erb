@@ -1,0 +1,29 @@
+<% 
+  record_name = []
+  @record_label.each do |x|
+    record_name.push x.name
+  end
+%>
+
+<p>Add A New Artist to RL:</p>
+
+<%= form_for :artist, url: artist_index_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.label :record_label %><br>
+    <%= f.select :record_label, record_name%>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
